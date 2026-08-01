@@ -1,0 +1,237 @@
+/*==================================================
+  LucasPaEther — Tema: Negro + Azul Eléctrico (mejorado)
+==================================================*/
+
+:root{
+  --bg: #050505;
+  --bg2: #0f0f10;
+  --card: #171717;
+  --primary: #00b7ff;
+  --primary-contrast: #002933;
+  --secondary: #00d9ff;
+  --text: #ffffff;
+  --muted: #9e9e9e;
+  --border: #222;
+  --shadow: 0 10px 30px rgba(0,183,255,.12);
+  --radius: 16px;
+  --transition: 300ms ease;
+  --container-padding: 8%;
+  --header-height: 72px;
+}
+
+/* Reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  :root { --transition: 0ms; }
+}
+
+/* Base reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* sr-only helper */
+.sr-only {
+  position: absolute !important;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border: 0;
+}
+
+/* Section spacing */
+section { padding: 100px var(--container-padding); }
+h1,h2,h3 { font-weight: 700; color: var(--text); line-height: 1.1; }
+h2 { font-size: 2.4rem; text-align: center; margin-bottom: 50px; }
+
+/* Header / Navbar */
+header{
+  position: fixed;
+  inset: 0 0 auto 0;
+  height: var(--header-height);
+  z-index: 999;
+  backdrop-filter: blur(10px);
+  background: linear-gradient(180deg, rgba(0,0,0,.6), rgba(0,0,0,.45));
+  border-bottom: 1px solid rgba(255,255,255,.04);
+}
+.navbar{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--container-padding);
+  gap: 1rem;
+}
+.logo { font-size: 1.5rem; font-weight: 800; color: var(--text); }
+.logo span { color: var(--primary); }
+.menu {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+  align-items: center;
+}
+.menu a {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: color var(--transition), background var(--transition), transform var(--transition);
+}
+.menu a:hover,
+.menu a:focus-visible { color: var(--primary); background: rgba(0,183,255,0.04); transform: translateY(-2px); }
+.menu a:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(0,183,255,0.12); }
+
+/* Menu button (mobile) */
+.menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  font-size: 1.6rem;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+}
+.menu-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(0,183,255,0.12); }
+
+/* Hero */
+.hero {
+  min-height: calc(100vh - var(--header-height));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    linear-gradient(rgba(0,0,0,0.72), rgba(0,0,0,0.85)),
+    url("../images/hero.jpg") center/cover no-repeat;
+  padding-top: var(--header-height);
+}
+.hero h1 { font-size: clamp(2rem, 4rem, 4.5rem); margin-bottom: 20px; }
+.hero p { max-width: 720px; margin: 0 auto; color: var(--muted); font-size: 1.05rem; }
+.btn {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 30px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  color: #001016;
+  font-weight: 600;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.btn:hover,
+.btn:focus-visible { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(0,183,255,0.10); }
+
+/* Empresa */
+.empresa p { max-width: 900px; margin: 0 auto; text-align: center; color: var(--muted); }
+
+/* Servicios */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 28px;
+}
+.card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 34px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.card:hover,
+.card:focus-within { transform: translateY(-8px); box-shadow: var(--shadow); }
+.card i { font-size: 40px; color: var(--primary); margin-bottom: 16px; display: inline-block; }
+
+/* Proyectos */
+.galeria {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+.proyecto {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.proyecto:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+
+/* Contacto */
+form { max-width: 720px; margin: 0 auto; }
+.form-group { margin-bottom: 16px; }
+label { display: inline-block; margin-bottom: 8px; color: var(--muted); font-size: 0.95rem; }
+input, textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 12px;
+  background: #0f0f10;
+  color: var(--text);
+  border: 1px solid #181818;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  font-size: 1rem;
+}
+input::placeholder, textarea::placeholder { color: rgba(255,255,255,0.35); }
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 6px 20px rgba(0,183,255,0.08);
+}
+textarea { min-height: 160px; resize: vertical; }
+
+/* Error messages */
+.error {
+  display: block;
+  color: #ff7676;
+  font-size: 0.9rem;
+  margin-top: 6px;
+  min-height: 1.25em;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 40px var(--container-padding);
+  background: #000;
+  border-top: 1px solid #111;
+  color: var(--muted);
+}
+
+/* Responsive behaviour */
+@media (max-width: 900px) {
+  section { padding: 80px 30px; }
+  .menu { display: none; }
+  .menu-btn { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* Mobile menu panel */
+  .menu.open {
+    display: flex;
+    position: absolute;
+    top: calc(var(--header-height) + 10px);
+    right: var(--container-padding);
+    flex-direction: column;
+    gap: 10px;
+    background: linear-gradient(180deg, rgba(15,15,16,0.98), rgba(14,14,15,0.98));
+    padding: 12px;
+    min-width: 220px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,0.03);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+    z-index: 999;
+  }
+  .menu.open a { padding: 10px 14px; display: block; width: 100%; }
+  .hero h1 { font-size: 2.7rem; }
+}
+
+/* Utility: focus-visible outlines for keyboard users */
+:focus { outline: none; }
+:focus-visible {
+  outline: 3px solid rgba(0,183,255,0.18);
+  outline-offset: 3px;
+}

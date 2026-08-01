@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>LucasPaEther | Soluciones Tecnológicas</title>
+  <meta name="description" content="LucasPaEther ofrece soluciones tecnológicas modernas para empresas y emprendedores." />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0a74da" />
+
+  <!-- Open Graph (reemplaza las URLs de ejemplo) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LucasPaEther | Soluciones Tecnológicas" />
+  <meta property="og:description" content="Soluciones digitales modernas: desarrollo web, hosting y seguridad." />
+  <meta property="og:url" content="https://tusitio.example/" />
+  <meta property="og:image" content="https://tusitio.example/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="LucasPaEther | Soluciones Tecnológicas" />
+  <meta name="twitter:description" content="Soluciones digitales modernas: desarrollo web, hosting y seguridad." />
+
+  <link rel="icon" href="/favicon.ico" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://kit.fontawesome.com/6d2f9d0f8d.js" crossorigin="anonymous" defer></script>
+  <script defer src="js/script.js"></script>
+</head>
+<body>
+  <a class="skip-link sr-only" href="#main">Saltar al contenido</a>
+
+  <header>
+    <nav class="navbar" aria-label="Navegación principal">
+      <div class="logo">
+        <a href="#inicio" class="logo-link">Lucas<span>PaEther</span></a>
+      </div>
+
+      <ul class="menu" id="menu" role="menubar">
+        <li role="none"><a role="menuitem" href="#inicio">Inicio</a></li>
+        <li role="none"><a role="menuitem" href="#empresa">Empresa</a></li>
+        <li role="none"><a role="menuitem" href="#servicios">Servicios</a></li>
+        <li role="none"><a role="menuitem" href="#proyectos">Proyectos</a></li>
+        <li role="none"><a role="menuitem" href="#contacto">Contacto</a></li>
+      </ul>
+
+      <button class="menu-btn" id="menuBtn" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+        <i class="fas fa-bars" aria-hidden="true"></i>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" tabindex="-1">
+    <section class="hero" id="inicio" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Impulsamos el futuro con tecnología.</h1>
+        <p>En LucasPaEther desarrollamos soluciones digitales modernas para empresas, comercios y emprendedores.</p>
+        <a href="#contacto" class="btn">Solicitar Información</a>
+      </div>
+    </section>
+
+    <section id="empresa" class="empresa" aria-labelledby="empresa-title">
+      <h2 id="empresa-title">Quiénes Somos</h2>
+      <p>LucasPaEther es una empresa enfocada en el desarrollo de sitios web, soluciones digitales y automatización de procesos, ofreciendo calidad, innovación y soporte profesional.</p>
+    </section>
+
+    <section id="servicios" class="servicios" aria-labelledby="servicios-title">
+      <h2 id="servicios-title">Nuestros Servicios</h2>
+      <div class="cards" role="list">
+        <article class="card" role="listitem" aria-labelledby="serv1">
+          <i class="fas fa-laptop-code" aria-hidden="true"></i>
+          <h3 id="serv1">Desarrollo Web</h3>
+          <p>Sitios rápidos, modernos y totalmente responsivos.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="serv2">
+          <i class="fas fa-server" aria-hidden="true"></i>
+          <h3 id="serv2">Hosting</h3>
+          <p>Asesoramiento para publicar tu empresa en Internet.</p>
+        </article>
+
+        <article class="card" role="listitem" aria-labelledby="serv3">
+          <i class="fas fa-shield-alt" aria-hidden="true"></i>
+          <h3 id="serv3">Seguridad</h3>
+          <p>Implementación de medidas para proteger tus servicios.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="proyectos" aria-labelledby="proyectos-title">
+      <h2 id="proyectos-title">Proyectos</h2>
+      <div class="galeria" role="list">
+        <article class="proyecto" role="listitem">
+          <h3>Proyecto Alpha</h3>
+          <p>Portal empresarial.</p>
+        </article>
+
+        <article class="proyecto" role="listitem">
+          <h3>Proyecto Beta</h3>
+          <p>Sistema administrativo.</p>
+        </article>
+
+        <article class="proyecto" role="listitem">
+          <h3>Proyecto Gamma</h3>
+          <p>Aplicación corporativa.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="contacto" aria-labelledby="contacto-title">
+      <h2 id="contacto-title">Contacto</h2>
+
+      <form id="contactForm" method="post" action="#" novalidate aria-labelledby="contacto-title" aria-describedby="formStatus">
+        <div id="formStatus" class="sr-only" role="status" aria-live="polite"></div>
+
+        <div class="form-group">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" placeholder="Nombre" required aria-required="true" aria-describedby="error-nombre" />
+          <span id="error-nombre" class="error" role="alert" aria-live="assertive"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="correo">Correo</label>
+          <input id="correo" name="correo" type="email" placeholder="Correo" required aria-required="true" aria-describedby="error-correo" />
+          <span id="error-correo" class="error" role="alert" aria-live="assertive"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje" rows="5" required aria-required="true" aria-describedby="error-mensaje"></textarea>
+          <span id="error-mensaje" class="error" role="alert" aria-live="assertive"></span>
+        </div>
+
+        <button type="submit" class="btn">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2026 LucasPaEther - Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
